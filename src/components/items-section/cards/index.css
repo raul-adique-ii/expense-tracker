@@ -1,0 +1,83 @@
+.history {
+    border-bottom: 2px solid rgba(249, 9, 212, 0.8);
+    margin-bottom: 1rem;
+}
+
+.items button {
+ box-shadow: none;
+}
+
+.items button:hover {
+    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+}
+
+.items button:active {
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+.items button:disabled {
+    color: #6f6f6f;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    padding: .8rem;
+    background: #EBECF0;
+    margin: 1rem 0;
+    border-radius: 5px;
+    box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6);
+    align-items: center;
+}
+
+.card:hover,
+.card:focus {
+    box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.6);;
+}
+
+.delete-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete-group button {
+    font-weight: bold;
+    box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+    border: 0;
+    outline: 0;
+    padding: 1rem;
+    margin: 0 0.5rem;
+    border-radius: 800px;
+    text-shadow: 1px 1px 0 #FFF;
+}
+
+.delete-group .delete-icon {
+    color: maroon;
+}
+
+.delete-group .edit-icon {
+    color: mediumseagreen;
+}
+
+.delete-group button:hover {
+    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+}
+.delete-group button:active {
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+.delete-group p {
+    padding: 1rem
+}
+
+.minus {
+    color: #AE1100;
+}
+
+.plus {
+    color: green;
+}

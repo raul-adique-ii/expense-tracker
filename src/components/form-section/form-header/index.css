@@ -1,0 +1,13 @@
+.logo-section img {   
+    width: 60%;
+}
+
+.logo-section h1 {
+    margin-top: 2rem;
+}
+
+h1 {
+    color: rgba(249, 9, 212, 0.8);
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 1px #FFF;
+}
