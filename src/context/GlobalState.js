@@ -20,9 +20,12 @@ const initialState = {
 const AppProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState)
     const [isModalOpen, setIsModalOpen] = useState(false)
+    const [selectedTransaction, setSelectedTransaction] = useState({})
 
-    const openModal = () => {
+    const openModal = (transaction) => {
+        console.log({transaction});
         setIsModalOpen(true)
+        setSelectedTransaction(transaction);
     }
 
     const closeModal = () => {
@@ -77,6 +80,7 @@ const AppProvider = ({ children }) => {
                 removeAlert,
                 deleteTransaction,
                 addTransaction,
+                selectedTransaction,
                 isModalOpen,
                 openModal,
                 closeModal,

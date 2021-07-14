@@ -22,9 +22,9 @@ const TransactionItem = ({ transaction }) => {
         setAlert(true, 'You deleted an item', 'danger')
     }
 
-    // const modalOpen = (transaction) => {
-    //     openModal()
-    // }
+    const modalOpen = () => {
+        openModal(transaction);
+    }
 
     const sign = transaction.amount < 0 ? '-' : '+'
 
@@ -33,7 +33,7 @@ const TransactionItem = ({ transaction }) => {
             <p>{transaction.text}</p>
             <div className='delete-group'>
                 <p className={transaction.amount < 0 ? 'minus' : 'plus'}>{sign}${Math.abs(transaction.amount)}</p>
-                <button onClick={openModal}><FiEdit2 /></button>
+                <button onClick={modalOpen}><FiEdit2 /></button>
                 <button className='delete-group' onClick={() => handleDelete()}><AiOutlineDelete className='delete-icon' /></button>
             </div>
         </div>

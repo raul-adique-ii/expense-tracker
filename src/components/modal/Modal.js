@@ -6,12 +6,13 @@ import { useGlobalContext } from '../../context/GlobalState'
 import './index.css'
 
 const Modal = () => {
-    const { isModalOpen, closeModal } = useGlobalContext()
+    const { isModalOpen, closeModal, selectedTransaction } = useGlobalContext()
     return (
         <div className={`${isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'}`}>
             <div className='modal-container'>
                 <form>
                     <h1>Edit Form</h1>
+                    <div>{selectedTransaction.amount}</div>
                     <div className='form-inputs'>
                     <label>
                        <input type='text' placeholder='Enter Transaction' />
