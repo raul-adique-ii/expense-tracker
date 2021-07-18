@@ -28,6 +28,19 @@ const reducer = (state, action) => {
                 ...state,
                 transactions: [...state.transactions, payload]
             }
+        case 'EDIT_TRANSACTION':
+            const updatedTransaction = payload
+
+            const updatedTransactions = state.transactions.map((transaction) => {
+                if (transaction.id === updatedTransaction.id) {
+                    return updatedTransaction
+                }
+                return transaction
+            })
+            return {
+                ...state,
+                transactions: updatedTransactions
+            }
         default:
             return state
     }
