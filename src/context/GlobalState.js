@@ -1,4 +1,5 @@
 import React, { useContext, useReducer, useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 
 import reducer from './reducer'
 
@@ -6,9 +7,9 @@ const AppContext = React.createContext()
 
 const initialState = {
     transactions: [
-        {id: 1, text: 'baligya gamit', amount: 20000},
-        {id: 2, text: 'bills', amount: -15000},
-        {id: 3, text: 'others', amount: -1000}
+        {id: uuidv4(), text: 'baligya gamit', amount: 20000},
+        {id: uuidv4(), text: 'bills', amount: -15000},
+        {id: uuidv4(), text: 'others', amount: -1000}
     ],
     alerts: {
         show: false,
@@ -54,13 +55,19 @@ const AppProvider = ({ children }) => {
         })
     }
     
-    const addTransaction = (transaction, edit = false) => {
-        if (!edit) {
-            dispatch({
-                type: 'ADD_TRANSACTION',
-                payload: transaction
-            })
-        }
+    const addTransaction = (transaction) => {   
+        dispatch({
+            type: 'ADD_TRANSACTION',
+            payload: transaction
+        })
+        
+    }
+
+    const editTransaction = (transaction) => {
+        dispatch({
+            type: 'EDIT_TRANSACTION',
+            payload: transaction
+        })
     }
     
     const clearTransactions = () => {
@@ -80,6 +87,7 @@ const AppProvider = ({ children }) => {
                 removeAlert,
                 deleteTransaction,
                 addTransaction,
+                editTransaction,
                 selectedTransaction,
                 isModalOpen,
                 openModal,
