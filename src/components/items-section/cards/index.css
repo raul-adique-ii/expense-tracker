@@ -41,6 +41,10 @@
     justify-content: space-between;
 }
 
+.action-buttons {
+    display: flex;
+}
+
 .delete-group button {
     font-weight: bold;
     box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
