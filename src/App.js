@@ -1,33 +1,31 @@
 import React from 'react'
-// import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import BalanceHeader from './components/items-section/balance/BalanceHeader'
-import Forms from './components/form-section/form/Forms'
-import Header from './components/form-section/form-header/Header'
+import Container from './components/container/Container'
+import EditPage from './components/form-section/EditPage';
+import Forms from './components/form-section/Forms'
+import ItemContainer from './components/container/ItemContainer'
 import IncomeExpenses from './components/items-section/income-expense/IncomeExpenses'
 import TransactionList from './components/items-section/cards/TransactionList'
-import Modal from './components/modal/Modal'
 
 const App = () => {
     return (
         <>
-            <main>
-                <section className='glass'>
-                    <div className='dash-form'>
-                        <Header />
-                        <Forms />
-                    </div>
-                    <div className='items'>
+            <Route path='/' exact>
+                <Container>
+                    <Forms />     
+                    <ItemContainer>
                         <BalanceHeader />
                         <IncomeExpenses />
                         <TransactionList />
-                    </div>
-                </section>
-            </main>
-                    <div className='circle1'></div>
-                    <div className='circle2'></div>
-            <Modal />
-            </>    
+                    </ItemContainer>
+                </Container>
+                        <div className='circle1'></div>
+                        <div className='circle2'></div>
+            </Route>
+            <Route path='/edit/:id' component={EditPage} />
+        </>    
     )
 }
 
