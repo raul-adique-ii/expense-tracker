@@ -4,7 +4,6 @@ import TransactionItem from './TransactionItem'
 
 import { useGlobalContext } from '../../../context/GlobalState'
 
-import './index.css'
 
 const TransactionList = () => {
     const { transactions, clearTransactions, setAlert } = useGlobalContext()
@@ -16,7 +15,7 @@ const TransactionList = () => {
 
     return (
         <div>
-            <h3 className='history'>History</h3>
+            <h1 className='history'>History</h1>
             {transactions.length === 0 ? <button disabled>Clear List</button> : <button onClick={onClearTransactions}>Clear List</button>}
             {transactions.map(transaction => <TransactionItem key={transaction.id} transaction={transaction} />)}
         </div>
