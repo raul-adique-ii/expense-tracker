@@ -1,8 +1,7 @@
 import React from 'react'
 
 import { useGlobalContext } from '../../../context/GlobalState'
-
-import './index.css'
+import { numberWithCommas} from '../../../utils/format'
 
 const BalanceHeader = () => {
     const { transactions } = useGlobalContext()
@@ -13,7 +12,7 @@ const BalanceHeader = () => {
     return (
         <div className='balance'>
             <h1>Balance</h1>
-            <p>${total}</p>
+            <p>₱{numberWithCommas(total)}</p>
         </div>
     )
 }
