@@ -7,7 +7,7 @@ const AppContext = React.createContext()
 
 const initialState = {
     transactions: [
-        {id: uuidv4(), text: 'baligya gamit', amount: 20000},
+        {id: uuidv4(), text: 'app', amount: 20000},
         {id: uuidv4(), text: 'bills', amount: -15000},
         {id: uuidv4(), text: 'others', amount: -1000}
     ],
