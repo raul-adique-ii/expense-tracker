@@ -32,7 +32,7 @@ label {
 }
 
 h1 {
-  color: #BABECC;
+  color: #9C51B6;
   text-shadow: 1px 1px 1px #FFF;
 }
 
@@ -89,7 +89,7 @@ button:hover {
 .glass {
     background: #fff;
     min-height: 80vh;
-    width: 60%;
+    width: 80%;
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
     border-radius: 2rem;
     z-index: 2;
@@ -108,13 +108,13 @@ button:hover {
 }
 
 .circle1 {
-    top: 5%;
-    right: 15%;
+    top: 2%;
+    right: 2%;
 }
 
 .circle2 {
-    bottom: 5%;
-    left: 12%;
+    bottom: 2%;
+    left: 2%;
 }
 
 h1 {
@@ -154,6 +154,15 @@ h1 {
     flex: 2;
 }
 
+.items button:disabled {
+    color: #6f6f6f;
+}
+
+.icon-box {
+    font-size: 2.5rem;
+    color: rgba(249, 9, 212, 0.8);
+}
+
 .form-inputs {
     display: flex;
     flex-direction: column;
@@ -188,6 +197,10 @@ h1 {
 
 .balance {
     text-align: center;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.3);
+    width: 50%;
+    align-self: center;
+    padding: 1rem;
 }
 
 .balance h1 {
@@ -198,11 +211,24 @@ h1 {
 
 .income-expense {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    border-radius: 5px;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.3);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    width: 50%;
+    color: #426696;
+}
+
+.income-items {
+    padding: .5rem;
 }
 
 .items {
-    margin: 5rem;
+    margin: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -215,27 +241,109 @@ h1 {
 
 .card {
     display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-    background: linear-gradient(to left top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
-    margin: 1rem 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: .5rem 0;
     border-radius: 5px;
+    width: 100%;
     box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.3);
 }
 
-@media (max-width: 700px) {
+.card h3 {
+    text-transform: capitalize;
+    color: #426696;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.history {
+    border-bottom: 2px solid rgba(249, 9, 212, 0.8);
+    margin-bottom: 1rem;
+}
+
+.delete-group {
+    justify-content: center;
+    align-items: center;
+    margin: .8rem;
+}
+
+.delete-group p {
+    font-size: 1.5rem;
+}
+
+.minus {
+    color: #AE1100;
+}
+
+.plus {
+    color:seagreen;
+} 
+
+@media (min-width: 700px) {
     .items {
         flex-direction: column;
+        /* justify-content: center;
+        align-items: center; */
     }
     .balance {
-        margin: 1rem;
         text-align: center;
+        padding: 1rem;
+        align-self: center;
+        box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.3);
+        margin-bottom: 2rem;
+        width: 50%;
     }
     .balance p {
         font-size: 1.5rem;
     }
     .income-expense {
-        justify-content: space-between;
+        display: flex;
+        align-self: center;
+        flex-direction: row;
         margin-bottom: 1rem;
+        width: 60%;
+        box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.3);
     }
+    .income-items {
+        text-align: center;
+    }
+    .income-items p {
+        font-size: 1.3rem;
+    }
+    .card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+        background: linear-gradient(to left top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
+        margin: 1rem 0;
+        border-radius: 5px;
+        box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.3);
+        width: 100%;
+        box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6);
+        align-items: center;
+    }
+    .card h3 {
+        text-transform: capitalize;
+        color: #426696;
+    }
+    .delete-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0 .8rem;
+    }
+    p {
+        margin: 0 2.5rem;
+    }
+
+    .minus {
+        color: #AE1100;
+    }
+    
+    .plus {
+        color:seagreen;
+    } 
 }
